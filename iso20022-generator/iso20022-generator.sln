@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iso20022-generator", "iso20022-generator\iso20022-generator.csproj", "{072A1D92-966F-4C9C-BBDF-9653B8B3A29F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkiOki.Iso20022.Generator", "iso20022-generator\OkiOki.Iso20022.Generator.csproj", "{072A1D92-966F-4C9C-BBDF-9653B8B3A29F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "generator-test", "generator-test\generator-test.csproj", "{788CD239-F6EB-411A-A3E2-5B9487B1AD6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkiOki.Iso20022.Generator.Tests", "generator-test\OkiOki.Iso20022.Generator.Tests.csproj", "{788CD239-F6EB-411A-A3E2-5B9487B1AD6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

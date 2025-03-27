@@ -1,35 +1,40 @@
-﻿using System;
+﻿namespace OkiOki.Iso20022.Generator.Entity;
 
-namespace iso20022_generator.entity
+internal record Sender
 {
-    public class Sender
+    private string _senderIban;
+    private string _senderBic = "";
+
+    public Sender(string senderPartyName, string senderIban, string senderBic)
     {
-        private string _senderIban;
-        private string _senderBic = "";
-        public string SenderPartyName { get; set; }
+        SenderPartyName = senderPartyName;
+        SenderIban = senderIban;
+        SenderBic = senderBic;
+    }
 
-        public string SenderIban
+    public string SenderPartyName { get; set; }
+
+    public string SenderIban
+    {
+        get => _senderIban;
+        set
         {
-            get => _senderIban;
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Sender IBAN cannot be null or whitespace.", nameof(value));
-                if (value.Length < 15)
-                    throw new ArgumentException("Sender IBAN is to short", nameof(value));
-                _senderIban = value.Replace(" ", "");
-            }
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("Sender IBAN cannot be null or whitespace.", nameof(value));
+            if (value.Length < 15)
+                throw new ArgumentException("Sender IBAN is to short", nameof(value));
+            _senderIban = value.Replace(" ", "");
         }
+    }
 
-        public string SenderBic
+    public string SenderBic
+    {
+        get => _senderBic;
+        set
         {
-            get => _senderBic;
-            set
-            {
-                if (value.Length > 11)
-                    throw new ArgumentException("Sender BIC is to long", nameof(value));
-                _senderBic = value;
-            }
+            if (value.Length > 11)
+                throw new ArgumentException("Sender BIC is to long", nameof(value));
+            _senderBic = value;
         }
     }
 }

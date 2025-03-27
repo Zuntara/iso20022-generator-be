@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>generator_test</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>OkiOki.Iso20022.Generator.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\iso20022-generator\iso20022-generator.csproj" />
+    <ProjectReference Include="..\iso20022-generator\OkiOki.Iso20022.Generator.csproj" />
   </ItemGroup>
 
 </Project>

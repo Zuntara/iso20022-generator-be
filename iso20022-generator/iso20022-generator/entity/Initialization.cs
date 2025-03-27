@@ -1,47 +1,18 @@
-﻿using System;
+﻿namespace OkiOki.Iso20022.Generator.Entity;
 
-namespace iso20022_generator.entity
+internal record Initialization
 {
-    public class Initialization
-    {
-        
-        private decimal _controlSum;
-        private string _contactDetailsName = "iso20022-Generator / enio AG";
-        private string _contactDetailsOther = "3.0.4";
+    public decimal ControlSum { get; set; }
 
-        public decimal ControlSum
-        {
-            get => _controlSum;
-            set
-            {
-                _controlSum = value;
-            }
-        }
+    public bool AutoCalculateControlSum { get; set; }
 
-        public bool AutoCalculateControlSum { get; set; }
+    public string ContactDetailsName { get; set; } = "ISO20022-Generator / OkiOki";
 
-        public string ContactDetailsName
-        {
-            get => _contactDetailsName;
-            set
-            {
-                _contactDetailsName = value;
-            }
-        }
+    public string? ContactDetailsOther { get; set; }
 
-        public string ContactDetailsOther
-        {
-            get => _contactDetailsOther;
-            set
-            {
-                _contactDetailsOther = value;
-            }
-        }
-
-        /// <summary>
-        /// This must be a unique string identifier over all sent pain.001 files over the last 90 days.
-        /// Your financial institute will use that id for duplicate checking. The id must not be longer than 34 characters
-        /// </summary>
-        public string UniqueDocumentId { get; set; }
-    }
+    /// <summary>
+    /// This must be a unique string identifier over all sent pain.001 files over the last 90 days.
+    /// Your financial institute will use that id for duplicate checking. The id must not be longer than 34 characters
+    /// </summary>
+    public string UniqueDocumentId { get; set; } = Guid.NewGuid().ToString().Substring(0, 34);  // Must be unique for the bank within 90 days
 }
